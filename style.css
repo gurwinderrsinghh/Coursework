@@ -198,6 +198,21 @@ footer {
 }
 
 
+button{ border:none; cursor:pointer; outline:none; }
+
+
+button#playpausebtn{	background:url(/Images/Play.png) no-repeat;
+	width:45px;
+	height:45px;
+ 
+}
+
+button#mutebtn{	background:url(/Images/Volume.png) no-repeat;
+	width:45px;
+	height:45px;
+}
+
+
 iframe{
     position: center;
 }
