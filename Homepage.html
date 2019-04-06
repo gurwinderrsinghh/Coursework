@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="engine1/style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  
+
 
 
   <title>Narsingh Bornlion</title>
@@ -55,41 +55,43 @@
 
               <button id="playpausebtn"></button>
               <button id="mutebtn"></button>
-                <script>
-                  var audio, playbtn, mutebtn, seek_bar;
-                  function initAudioPlayer(){
-                audio = new Audio();
-                audio.src = "/Audio/RaagBhairvi.mp3";
-                audio.loop = true;
-                audio.play();
-                // Set object references
-                playbtn = document.getElementById("playpausebtn");
-                mutebtn = document.getElementById("mutebtn");
-                // Add Event Handling
-                playbtn.addEventListener("click",playPause);
-                mutebtn.addEventListener("click", mute);
-                // Functions
-                function playPause(){
-                    if(audio.paused){
-                        audio.play();
-                        playbtn.style.background = "url(/Images/Pause.png) no-repeat";
+              <script>
+                var audio, playbtn, mutebtn, seek_bar;
+
+                function initAudioPlayer() {
+                  audio = new Audio();
+                  audio.src = "/Audio/RaagBhairvi.mp3";
+                  audio.loop = true;
+                  audio.play();
+                  // Set object references
+                  playbtn = document.getElementById("playpausebtn");
+                  mutebtn = document.getElementById("mutebtn");
+                  // Add Event Handling
+                  playbtn.addEventListener("click", playPause);
+                  mutebtn.addEventListener("click", mute);
+                  // Functions
+                  function playPause() {
+                    if (audio.paused) {
+                      audio.play();
+                      playbtn.style.background = "url(/Images/Pause.png) no-repeat";
                     } else {
-                        audio.pause();
-                        playbtn.style.background = "url(/Images/Play.png) no-repeat";
+                      audio.pause();
+                      playbtn.style.background = "url(/Images/Play.png) no-repeat";
                     }
-                }
-                function mute(){
-                    if(audio.muted){
-                        audio.muted = false;
-                        mutebtn.style.background = "url(/Images/Volume.png) no-repeat";
+                  }
+
+                  function mute() {
+                    if (audio.muted) {
+                      audio.muted = false;
+                      mutebtn.style.background = "url(/Images/Volume.png) no-repeat";
                     } else {
-                        audio.muted = true;
-                        mutebtn.style.background = "url(/Images/Mute.png) no-repeat";
+                      audio.muted = true;
+                      mutebtn.style.background = "url(/Images/Mute.png) no-repeat";
                     }
+                  }
                 }
-            }
-            window.addEventListener("load", initAudioPlayer);
-                </script>
+                window.addEventListener("load", initAudioPlayer);
+              </script>
             </div>
           </li>
 
@@ -137,7 +139,7 @@
               <img src="Images/Bhai%20Baljit%20Singh.png" alt="Image">
               <div class="carousel-caption">
                 <h3>Bhai Baljit Singh & Jatha</h3>
-                <h5>Bhai Gurmeet Singh, Bhai Baljit Singh</h5>
+                <h5>Bhai Gurmeet Singh, Bhai Baljit Singh, Bhai Fateh Singh</h5>
               </div>
             </div>
 
@@ -208,9 +210,9 @@
         <div class="well">
           <p>Narsingh Bornlion is an initiative to promote Gurmat Sangeet, a branch of indian classical music. Gurmat Sangeet popularly known as Kirtan, can be described as signing and performing devotional music in accordance to the teaching of the
             sikh gurus. Within Gurmat Sangeet an emphasis is placed on raag and the shabads, the religious hymns.</p>
-        <div class="well">
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/528626058&color=%239f9d8a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-        </div>
+          <br>
+          <p>Within the past century Gurmat Sangeet has seen a heavy divergence from its origins. From the divergence of the original instruments used and the rules attributed to its form of music. For example this includes the introduction of the
+            harmonium which is not a Sikh instrument and singing compositions not within a raag.</p>
         </div>
       </div>
     </div>
@@ -244,76 +246,85 @@
     <h3>FIND OUT MORE</h3>
     <br>
     <div class="row">
-        
-        
-        
-    
-        
-      
-       
-        
-     
-        
-        
-        
-        
-      <div class="col-sm-3">
-        <div class="well">
-          <p>Some text..</p>
-        </div>
-        <div class="well">
-          <p>Some text..</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <p>Some text..</p>
-        </div>
-        <div class="well">
-          <p>Some text..</p>
-        </div>
-      </div>
+
+
+
+
+
+Listen to our latest track:
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/538663254&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+
+
     </div>
     <hr>
   </div>
 
-    
-    
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-3">
-        <img src="/Images/Bhai%20Avtar%20Singh%20Taus.jpg" class="img-responsive" style="width=100%;" alt="image">
-            <p>Taus</p>
-      </div>
-    
- 
-        <div class="col-sm-3">
-        <img src="Images/Saranda.jpg" class="img-responsive" style="width:100%" alt="Image">
-          <p>Saranda</p>
-      </div>
-      
-      
-  
-  </div>
-</div><br>
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-3">
-        <img src="/Images/Jori.jpg" class="img-responsive" style="width:100%" alt="Image">
-        <p>Jori Pakhawaj</p>
-      </div>
-      
+
+  <div class="container">
+    <div class="row">
       <div class="col-sm-3">
-        <img src="/Images/RudrVeena.png" class="img-responsive" style="width:100%" alt="Image">
-        <p>Rabab</p>
+         <div class="hovereffect">
+        <img class="img-responsive" src="/Images/Bhai%20Avtar%20Singh%20Taus.jpg" alt="Image" style="width: 100%">
+            <div class="overlay">
+                <h2>Taus</h2>
+				<p>
+					<a href="#">LINK HERE</a>
+				</p>
+            </div>
+    </div>
       </div>
-    
+
+
+       <div class="col-sm-3">
+         <div class="hovereffect">
+        <img class="img-responsive" src="/Images/Saranda.jpg" alt="Image" style="width: 100%">
+            <div class="overlay">
+                <h2>Saranda</h2>
+				<p>
+					<a href="#">LINK HERE</a>
+				</p>
+            </div>
+    </div>
+      </div>
+
+      
+
+    </div>
+  </div><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+         <div class="hovereffect">
+        <img class="img-responsive" src="/Images/Jori.jpg" alt="Image" style="width: 100%">
+            <div class="overlay">
+                <h2>Jori Pakhawaj</h2>
+				<p>
+					<a href="#">LINK HERE</a>
+				</p>
+            </div>
+    </div>
+      </div>
+
+    <div class="col-sm-3">
+    <div class="hovereffect">
+        <img class="img-responsive" src="/Images/RudrVeena.png" alt="Image" style="width: 100%">
+            <div class="overlay">
+                <h2>Rudr Veena</h2>
+				<p>
+					<a href="#">LINK HERE</a>
+				</p>
+            </div>
+    </div>
+</div>
+
       
     </div>
-    
+
   </div>
-<br><br>
+  <br><br>
 
   <footer>
 
