@@ -118,14 +118,28 @@
 
         <div class="col-sm-12">
             <form>
-            <input name="kirtanis" list="kirtani"/>
-                <datalist id="kirtani">
-                    <option value="Bhai Avtar Singh">Bhai Avtar Singh</option>
-                    <option value="Professor Kartar Singh">Professor Kartar Singh</option>
-                    <option value="Bhai Samund Singh">Bhai Samund Singh</option>
-                    <option value="Bhai Balbir Singh">Bhai Balbir Singh</option>
-                </datalist>
+                <input type="text" name="my-input" list="my-list">
+<datalist id="my-list">
+  <option value="Bhai Avtar Singh">
+    <a href="/Kirtanis.html#BhaiAvtar"></a></option>
+  <option value="Bhai Samund Singh">
+    <a href="/Kirtanis.html#BhaiSamund"></a></option>
+  <option value="Bhai Balbir Singh Ji">
+    <a href="http://stackoverflow.com/questions"></a></option>
+</datalist>
+
             </form>
+            
+            
+            
+            
+<script>
+    $(document).ready(function() {
+  $("[list='my-list']").on("input propertychange", function() {
+    window.location = $("#my-list option[value='"+$("[list='my-list']").val()+"']").find("a").attr("href")
+  });
+});
+            </script>
         <br>
         <br>
        
