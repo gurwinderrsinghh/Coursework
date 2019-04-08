@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="engine1/jquery.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  
+
+
+  <title>Narsingh Bornlion</title>
+</head>
+
+
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/Homepage.html"><img src="Images/Logo.png" height="75px" width="75px"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/Homepage.html"s>Home</a>
+          </li>
+          <li>
+            <a href="#">History</a>
+          </li>
+          <li>
+            <a href="/Homepage.html#instruments">Instruments</a>
+          </li>
+          <li>
+            <a href="#">Kirtanis</a>
+          </li>
+          <li>
+            <a href="#">Media</a>
+          </li>
+          <li>
+            <div id="pageAudio">
+              <!-- Music -->
+
+              <button id="playpausebtn"></button>
+              <button id="mutebtn"></button>
+              <script>
+                var audio, playbtn, mutebtn, seek_bar;
+
+                function initAudioPlayer() {
+                  audio = new Audio();
+                  audio.src = "/Audio/RaagBhairvi.mp3";
+                  audio.loop = true;
+                  audio.play();
+                  // Set object references
+                  playbtn = document.getElementById("playpausebtn");
+                  mutebtn = document.getElementById("mutebtn");
+                  // Add Event Handling
+                  playbtn.addEventListener("click", playPause);
+                  mutebtn.addEventListener("click", mute);
+                  // Functions
+                  function playPause() {
+                    if (audio.paused) {
+                      audio.play();
+                      playbtn.style.background = "url(/Images/Pause.png) no-repeat";
+                    } else {
+                      audio.pause();
+                      playbtn.style.background = "url(/Images/Play.png) no-repeat";
+                    }
+                  }
+
+                  function mute() {
+                    if (audio.muted) {
+                      audio.muted = false;
+                      mutebtn.style.background = "url(/Images/Volume.png) no-repeat";
+                    } else {
+                      audio.muted = true;
+                      mutebtn.style.background = "url(/Images/Mute.png) no-repeat";
+                    }
+                  }
+                }
+                window.addEventListener("load", initAudioPlayer);
+              </script>
+            </div>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <div class="search-container">
+            <form>
+              <input type="text" placeholder="Search..">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    
+
+    
+<div class="container bg-secondary">
+    <div class="row">
+         
+
+        <div class="col-sm-12">
+            <form>
+            <input name="kirtanis" list="kirtani"/>
+                <datalist id="kirtani">
+                    <option value="Bhai Avtar Singh">Bhai Avtar Singh</option>
+                    <option value="Professor Kartar Singh">Professor Kartar Singh</option>
+                    <option value="Bhai Samund Singh">Bhai Samund Singh</option>
+                    <option value="Bhai Balbir Singh">Bhai Balbir Singh</option>
+                </datalist>
+            </form>
+        <br>
+        <br>
+       
+        
+</div>
+</div>
+         <div class="row">
+        <div class="col-sm-12">
+        <div class="well">
+            <div id="BhaiAvtar"></div>
+        </div>
+      </div>
+            </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="well">
+            <div id="ProfessorKartar"></div>
+        </div>
+      </div>
+            </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="well">
+            <div id="BhaiSamund"></div>
+        </div>
+      </div>
+            </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="well">
+            <div id="BhaiBalbir"></div>
+        </div>
+      </div>
+            </div>
+    
+    
+    
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="well">
+            <div id="Bhai"></div>
+        </div>
+      </div>
+            </div>
+    
+    
+    </div>
+    
+    
+    
+
+
+  <footer>
+
+
+    <a href=https://www.youtube.com/channel/UCkM3nAu3XpZMeb7M8tQ_EWw> <img src="Images/yt_logo_mono_dark.png"></a>
+
+    <a href="https://soundcloud.com/narsinghbornlion"><img src="Images/soundcloud-256.png"></a>
+
+
+  </footer>
+
+
+</body>
+
+</html>
