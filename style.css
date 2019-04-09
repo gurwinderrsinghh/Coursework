@@ -9,6 +9,7 @@ body {
 /* Text*/
 p {
     color: black;
+    line-height: 1.7;
 }
 
 /* navigation bar */
@@ -328,8 +329,12 @@ footer img{
     width: 300px;
     height: px;
     transition: transform .2s;
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 .bioimage:hover {
     transform: scale(1.2);
 }
+
