@@ -325,6 +325,11 @@ footer img{
 }
 
 .bioimage {
-    width: 600px;
-    height: 400px;
+    width: 300px;
+    height: px;
+    transition: transform .2s;
+}
+
+.bioimage:hover {
+    transform: scale(1.2);
 }
