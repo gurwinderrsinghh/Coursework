@@ -19,7 +19,7 @@
 </head>
 
 
-<body>
+<body  onload="init();">
 
 
   <nav class="navbar navbar-inverse">
@@ -30,27 +30,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/Homepage.html"><img src="Images/Logo.png" height="75px" width="75px"></a>
+        <a href="Homepage.php"><img src="Images/Logo.png" height="75px" width="75px"></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#">Home</a>
+            <a href="Homepage.php">Home</a>
           </li>
           <li>
-            <a href="#">History</a>
+            <a href="History.php">History</a>
           </li>
           <li>
-            <a href="#instruments">Instruments</a>
+            <a href="Homepage.php#instruments">Instruments</a>
           </li>
           <li>
-            <a href="/Kirtanis.html">Kirtanis</a>
+            <a href="Kirtanis.php">Kirtanis</a>
           </li>
           <li>
             <a href="#">Media</a>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <a href="Contact%20Us.php">Contact Us</a>
           </li>
           <li>
             <div id="pageAudio">
@@ -63,7 +63,7 @@
 
                 function initAudioPlayer() {
                   audio = new Audio();
-                  audio.src = "/Audio/RaagBhairvi.mp3";
+                  audio.src = "Audio/RaagBhairvi.mp3";
                   audio.loop = true;
                   audio.play();
                   // Set object references
@@ -76,20 +76,20 @@
                   function playPause() {
                     if (audio.paused) {
                       audio.play();
-                      playbtn.style.background = "url(/Images/Pause.png) no-repeat";
+                      playbtn.style.background = "url(Images/Pause.png) no-repeat";
                     } else {
                       audio.pause();
-                      playbtn.style.background = "url(/Images/Play.png) no-repeat";
+                      playbtn.style.background = "url(Images/Play.png) no-repeat";
                     }
                   }
 
                   function mute() {
                     if (audio.muted) {
                       audio.muted = false;
-                      mutebtn.style.background = "url(/Images/Volume.png) no-repeat";
+                      mutebtn.style.background = "url(Images/Volume.png) no-repeat";
                     } else {
                       audio.muted = true;
-                      mutebtn.style.background = "url(/Images/Mute.png) no-repeat";
+                      mutebtn.style.background = "url(Images/Mute.png) no-repeat";
                     }
                   }
                 }
@@ -102,8 +102,40 @@
       </div>
     </div>
   </nav>
+    <div class="subdiv">
+        <canvas id="MyCanvas1" width="1080" height="50">
+        This browser or document mode doesn't support canvas object
+        </canvas>
+    </div>
+<script type="text/javascript">
+    var can, ctx, step, steps = 0,
+      delay = 20;
 
+    function init() {
+      can = document.getElementById("MyCanvas1");
+      ctx = can.getContext("2d");
+      ctx.fillStyle = "Black";
+      ctx.font = "20pt Verdana";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      step = 0;
+      steps = can.width + 50;
+      RunTextLeftToRight();
+    }
 
+    function RunTextLeftToRight() {
+      step++;
+      ctx.clearRect(0, 0, can.width, can.height);
+      ctx.save();
+      ctx.translate(step, can.height / 2);
+      ctx.fillText("Narsingh BornLion", 0, 0);
+      ctx.restore();
+      if (step == steps)
+        step = 0;
+      if (step < steps)
+        var t = setTimeout('RunTextLeftToRight()', delay);
+    }
+  </script>
 
   <div class="container bg-secondary">
     <div class="row">
@@ -143,12 +175,12 @@
               <div class="carousel-caption">
                 <h3>Bhai Dhram Singh Zakhami & Jatha </h3>
                 <h5>Bhai Amrik Singh Zakhami, Bhai Samsher Singh Zakhami, Bhai Dharam Singh Zakhami,Bhai Hariqbal Singh Zakhmi</h5>
-              </div>
+              </div> 
             </div>
 
 
             <div class="item">
-              <img src="/Images/Bhai%20Dilbagh%20Singh%20Bhai%20Gulbagh%20Singh.png" alt="Image">
+              <img src="Images/Bhai%20Dilbagh%20Singh%20Bhai%20Gulbagh%20Singh.png" alt="Image">
               <div class="carousel-caption">
                 <h3>Bhai Dilbagh Singh & Bhai Gulbagh Singh </h3>
                 <h5>Puratan Kirtanis </h5>
@@ -175,7 +207,7 @@
 
 
             <div class="item">
-              <img src="/Images/Rababis.png" alt="Image">
+              <img src="Images/Rababis.png" alt="Image">
               <div class="carousel-caption">
                 <h3>Puratan Rababis</h3>
                 <h5>Ragis of the old</h5>
@@ -265,11 +297,11 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Bhai%20Avtar%20Singh%20Taus.jpg" id="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Bhai%20Avtar%20Singh%20Taus.jpg" id="Image" style="width: 100%">
           <div class="overlay">
             <h2>Taus</h2>
             <p>
-              Taus meaning peackock in Persian, is a Punjabi stringed instrument made by the sixth Guru of the Sikhs. In India it is also called the Mayuri Veena. The Taus can have 28 to 30 strings. 
+              Taus meaning peackock in Persian, is a Punjabi stringed instrument made by the sixth Guru of the Sikhs. In India it is also called the Mayuri Veena. The Taus can have 28 to 30 strings.
             </p>
           </div>
         </div>
@@ -278,7 +310,7 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Saranda.jpg" id="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Saranda.jpg" id="Image" style="width: 100%">
           <div class="overlay">
             <h2>Saranda</h2>
             <p>
@@ -290,7 +322,7 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Rabab.JPG" alt="Image" style="width: 100%" height="100px">
+          <img class="img-responsive" src="Images/Rabab.JPG" alt="Image" style="width: 100%" height="100px">
           <div class="overlay">
             <h2>Rabab</h2>
             <p>
@@ -304,7 +336,7 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Raag.jpg" alt="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Raag.jpg" alt="Image" style="width: 100%">
           <div class="overlay">
             <h2>Raag</h2>
             <p>
@@ -321,11 +353,11 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Jori.jpg" alt="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Jori.jpg" alt="Image" style="width: 100%">
           <div class="overlay">
             <h2>Jori Pakhawaj</h2>
             <p>
-                The Jori was brought into existence in the court of Guru Arjan Dev (1563-1606) by renowned Kirtaniyas. The Jori was created by splitting a century-old one-barrel instrument – Pakhawaj – into a two piece drum set.
+                The Jori was brought into existence in the court of Guru Arjan Dev (1563-1606). Created by splitting a century-old one-barrel instrument – Pakhawaj – into a two piece drum set.
             </p>
           </div>
         </div>
@@ -333,11 +365,11 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Tanpura.jpg" alt="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Tanpura.jpg" alt="Image" style="width: 100%">
           <div class="overlay">
             <h2>Tanpura</h2>
             <p>
-              Tanpura or Tamboora is a drone instrument. It resembles a sitar except it has no frets. This is one of the oldest and popular Saaj used for accompaniment of vocal music. The tanpura is known for its very rich sound. 
+              Tanpura is a drone instrument.This is one of the oldest & popular Saaj used for accompaniment of vocal music. The tanpura is known for its very rich sound.
             </p>
           </div>
         </div>
@@ -345,7 +377,7 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Harmonium.jpg" alt="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Harmonium.jpg" alt="Image" style="width: 100%">
           <div class="overlay">
             <h2>Harmonium</h2>
             <p>
@@ -357,7 +389,7 @@
 
       <div class="col-sm-3">
         <div class="hovereffect">
-          <img class="img-responsive" src="/Images/Bhai-Gurmit-Singh-Virdee.jpg" alt="Image" style="width: 100%">
+          <img class="img-responsive" src="Images/Bhai-Gurmit-Singh-Virdee.jpg" alt="Image" style="width: 100%">
           <div class="overlay">
             <h2>Taal</h2>
             <p>
@@ -379,6 +411,11 @@
     <a href=https://www.youtube.com/channel/UCkM3nAu3XpZMeb7M8tQ_EWw> <img src="Images/yt_logo_mono_dark.png"></a>
 
     <a href="https://soundcloud.com/narsinghbornlion"><img src="Images/soundcloud-256.png"></a>
+    
+    <a href="https://www.instagram.com/narsingh_bornlion/?hl=en"><img src="Images/icon-instagram-white.png"></a>
+
+    
+
 
 
   </footer>

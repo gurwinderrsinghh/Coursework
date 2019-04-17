@@ -31,18 +31,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/Homepage.html"><img src="Images/Logo.png" height="75px" width="75px"></a>
+        <a href="/Homepage.php"><img src="Images/Logo.png" height="75px" width="75px"></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li>
-            <a href="/Homepage.html"s>Home</a>
+            <a href="Homepage.php">Home</a>
           </li>
           <li>
-            <a href="#">History</a>
+            <a href="/History.php">History</a>
           </li>
           <li>
-            <a href="/Homepage.html#instruments">Instruments</a>
+            <a href="Homepage.php#instruments">Instruments</a>
           </li>
           <li>
             <a href="#">Kirtanis</a>
@@ -51,7 +51,7 @@
             <a href="#">Media</a>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <a href="/Contact%20Us.php">Contact Us</a>
           </li>
           <li>
             <div id="pageAudio">
@@ -64,7 +64,7 @@
 
                 function initAudioPlayer() {
                   audio = new Audio();
-                  audio.src = "/Audio/RaagBhairvi.mp3";
+                  audio.src = "Audio/RaagBhairvi.mp3";
                   audio.loop = true;
                   audio.play();
                   // Set object references
@@ -77,20 +77,20 @@
                   function playPause() {
                     if (audio.paused) {
                       audio.play();
-                      playbtn.style.background = "url(/Images/Pause.png) no-repeat";
+                      playbtn.style.background = "url(Images/Pause.png) no-repeat";
                     } else {
                       audio.pause();
-                      playbtn.style.background = "url(/Images/Play.png) no-repeat";
+                      playbtn.style.background = "url(Images/Play.png) no-repeat";
                     }
                   }
 
                   function mute() {
                     if (audio.muted) {
                       audio.muted = false;
-                      mutebtn.style.background = "url(/Images/Volume.png) no-repeat";
+                      mutebtn.style.background = "url(Images/Volume.png) no-repeat";
                     } else {
                       audio.muted = true;
-                      mutebtn.style.background = "url(/Images/Mute.png) no-repeat";
+                      mutebtn.style.background = "url(Images/Mute.png) no-repeat";
                     }
                   }
                 }
@@ -118,15 +118,15 @@
                 <input type="text" name="my-input" list="my-list">
 <datalist id="my-list">
   <option value="Bhai Avtar Singh">
-    <a href="/Kirtanis.html#BhaiAvtar"></a></option>
+    <a href="Kirtanis.php#BhaiAvtar"></a></option>
   <option value="Bhai Samund Singh">
-    <a href="/Kirtanis.html#BhaiSamund"></a></option>
+    <a href="Kirtanis.php#BhaiSamund"></a></option>
   <option value="Professor Kartar Singh">
-    <a href="/Kirtanis.html#ProfessorKartar"></a></option>
+    <a href="Kirtanis.php#ProfessorKartar"></a></option>
   <option value="Bhai Balbir Singh">
-    <a href="/Kirtanis.html#BhaiBalbir"></a></option>
+    <a href="Kirtanis.php#BhaiBalbir"></a></option>
    <option value="Bhai Bakshish ">
-    <a href="/Kirtanis.html#BhaiBakshish"></a></option>
+    <a href="Kirtanis.php#BhaiBakshish"></a></option>
 </datalist>
 
             </form>
@@ -156,6 +156,98 @@
                 <br><br>
                 Bhai Sahib Avtar Singh Ji and Bhai Sahib Gurcharan Singh Ji have rendered invaluable service to the Sikh Panth by preserving Gurmat Sangeet in its pristine form. They accomplished this by their unwavering commitment to the tradition over the years even when Gurmat Sangeet was being subverted by the pressures of popular culture and film music. The crowning achievement of their career was the publication of "Gurbani Sangeet Prachin Reet Ratnavali" in which they documented hundreds of traditional Gurmat Sangeet compositions handed down from generation to generation in an unbroken oral tradition.    
                 </p>
+                <script>
+    var c = document.getElementById("cvs");
+    var ctx = c.getContext("2d");
+
+    var grad1 = ctx.createLinearGradient(0, 0, 0, c.height);
+    grad1.addColorStop(0, "violet");
+    grad1.addColorStop(1, "red");
+
+    var jsData = {
+      "fields": ["1960s", "1970s", "1980s", "1990s", "2000s", "2010s"],
+      "data": [
+        [62000, 136000, 257000, 231000, 987957, 522000],
+        [0, 0, 0, 0, 0, 0]
+      ]
+    };
+
+    var niData = jsData.data[0].map((val, idx) => val - jsData.data[1][idx]);
+
+
+    var myData = {
+      labels: jsData.fields,
+      datasets: [{
+          label: "Sales",
+          data: jsData.data[0],
+          backgroundColor: grad1,
+          hoverBackgroundColor: "red",
+          pointStyle: "rect",
+        },
+
+      ]
+    };
+
+    var myChart = Chart.Bar(ctx, {
+      data: myData,
+      options: {
+        responsive: false,
+
+        title: {
+          display: true,
+          text: "Popular Album Sales",
+          fontSize: 16,
+        },
+
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            usePointStyle: true,
+          },
+          onClick: null,
+        },
+
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: false,
+            },
+            gridLines: {
+              display: false,
+            },
+            barPercentage: 0.8,
+            categoryPercentage: 0.6,
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Average sales per year",
+            },
+            gridLines: {
+              display: true,
+            },
+
+            type: "logarithmic",
+
+            ticks: {
+              min: 1e4,
+              max: 3e6,
+
+              callback: function(label) {
+                if ([1e4, 1e5, 1e6].indexOf(label) != -1)
+                  return label / 1000 + "K";
+              },
+            }
+          }],
+        }
+      }
+    });
+  </script>
+                 <canvas id="cvs" width="600" height="400"></canvas>
+
+  
+
             </div>
         </div>
       </div>
@@ -182,7 +274,7 @@
         <div class="well">
             <div id="BhaiSamund">
                 <h2>Bhai Samund Singh </h2>
-                <p><img src="/Images/Bhai%20Samund%20Singh.jpg" class="bioimage">Born at village Mulla Hamza in Montgomery District (now in Pakistan) in 1900 A.D., Bhai Samund Singh was given training in music by his father Bhai Hazur Singh Ji from his early child-hood. As a little boy he won a number of prizes and distinctions at musical concerts. He came to be known as 'Kaka Samund Singh' and was much in demand at Sikh congregations. His party came to be known as the best in the understanding of their art and almost perfect in presentation of Gurbani Kirtan.
+                <p><img src="Images/Bhai%20Samund%20Singh.jpg" class="bioimage">Born at village Mulla Hamza in Montgomery District (now in Pakistan) in 1900 A.D., Bhai Samund Singh was given training in music by his father Bhai Hazur Singh Ji from his early child-hood. As a little boy he won a number of prizes and distinctions at musical concerts. He came to be known as 'Kaka Samund Singh' and was much in demand at Sikh congregations. His party came to be known as the best in the understanding of their art and almost perfect in presentation of Gurbani Kirtan.
                 <br><br>    
                 With his unique melo-dious voice, an extensive and deep understanding of Gur-bani, correct interpretation of ragas, attractive style of sing-ing and great human qualities, he reigned supreme for sixty years in the world of Gurbani Kirtan. He performed kirtan at the Gurdwara Janam Sthan, Sri Nankana Sahib, the birth place of Guru Nanak Dev, for many years. He broadcast kirtan for 36 years from All India Radio, Lahore and later from Jalandhar and commanded wide listening. Passers-by stopped in the streets to listen to his kirtan irrespective of their faith. He was invited to perform kirtan in the National Programme of Music by All India Radio, the highest recognition of his art. He was given State award by the Punjab Government in 1971. He passed away at Ludhiana (5th January, 1972).</p>
             </div>
@@ -220,8 +312,7 @@
         </div>
       </div>
             </div>
-    
-    
+     
     </div>
     
     
@@ -234,6 +325,8 @@
     <a href=https://www.youtube.com/channel/UCkM3nAu3XpZMeb7M8tQ_EWw> <img src="Images/yt_logo_mono_dark.png"></a>
 
     <a href="https://soundcloud.com/narsinghbornlion"><img src="Images/soundcloud-256.png"></a>
+
+    <a href="https://www.instagram.com/narsingh_bornlion/?hl=en"><img src="Images/icon-instagram-white.png"></a>
 
 
   </footer>
